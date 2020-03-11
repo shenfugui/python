@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+# @Time    : 2020/3/11 23:00
+# @Author  : shenfugui
+# @Email   : shenge_ziyi@163.com
+# @File    : ranklist.py
+
 import requests
 import csv
 from bs4 import BeautifulSoup
