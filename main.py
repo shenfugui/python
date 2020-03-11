@@ -1,5 +1,4 @@
 import requests
-import time
 from bs4 import BeautifulSoup
 
 def get_urls():
@@ -21,15 +20,10 @@ def download(url):
     content = soup.find('div',id = 'content').get_text()
     with open(name,'w',encoding='utf-8') as f:
         f.write(content)
-    return title
+    print("正在下载%s" % title)
 
 def main():
-    idx = 0
-    title = get_urls()
-    for idx in range(1170):
-        print('正在下载%s'%title)
-        idx += 1
-        time.sleep(1)
+    get_urls()
 
 if __name__ == '__main__':
     main()
