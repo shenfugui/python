@@ -1,5 +1,12 @@
+# -*- coding: utf-8 -*-
+# @Time    : 2020/3/11 22:47
+# @Author  : shenfugui
+# @Email   : shenge_ziyi@163.com
+# @File    : spider.py
+
 import requests
 from bs4 import BeautifulSoup
+import threading
 
 def get_urls():
     url = 'http://www.xbiquge.la/14/14930/'
@@ -9,7 +16,9 @@ def get_urls():
     lists = soup.find('div',id = 'list').find_all('dd')
     for list in lists:
         url = 'http://www.xbiquge.la/' + list.a['href']
-        download(url)
+        t = threading.Thread(target=download,args=(url,))
+        t.start()
+        t.join()
 
 def download(url):
     r = requests.get(url)
