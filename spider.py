@@ -14,11 +14,13 @@ def get_urls():
     r.encoding = r.apparent_encoding
     soup = BeautifulSoup(r.text,'lxml')
     lists = soup.find('div',id = 'list').find_all('dd')
-    for list in lists:
-        url = 'http://www.xbiquge.la/' + list.a['href']
-        t = threading.Thread(target=download,args=(url,))
-        t.start()
-        t.join()
+    for i in range(10):
+        for list in lists:
+            url = 'http://www.xbiquge.la/' + list.a['href']
+            t = threading.Thread(target=download,args=(url,))
+            t.start()
+            t.join()
+
 
 def download(url):
     r = requests.get(url)
