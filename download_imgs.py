@@ -1,5 +1,5 @@
 # -*- ecoding: utf-8 -*-
-# @ModuleName: d2
+# @ModuleName: download_imgs
 # @Function: 
 # @Author: shenfugui
 # @Email: shenge_ziyi@163.com
