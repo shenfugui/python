@@ -1,4 +1,4 @@
-# -*- ecoding: utf-8 -*-
+# -*- encoding: utf-8 -*-
 # @ModuleName: lol
 # @Function:
 # @Author: shenfugui
